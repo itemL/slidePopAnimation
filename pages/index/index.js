@@ -16,7 +16,8 @@ Page({
     })
   },
 
-  __clickPopSetsButton: function(event){
+clickPopSetsButton
+  : function(event){
     console.warn("event",event);
   },
 

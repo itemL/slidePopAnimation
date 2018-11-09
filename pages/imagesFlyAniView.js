@@ -12,7 +12,7 @@ class imagesFlyAniView{
     this.page.data.animations = [];
     this.isAnimation = false;
     this.page.__startMoveAnimation = this.__startMoveAnimation.bind(this);
-    this.page.animationend = this.__animationend.bind(this);
+    this.page.__clickPopSetsButton = this.__clickPopSetsButton.bind(this);
   }
 /*
 
@@ -38,6 +38,15 @@ class imagesFlyAniView{
        startImageUrl: startImageUrl
     })
  }
+
+  __clickPopSetsButton(event){
+    var index=  event.currentTarget.dataset.index;
+    if (this.page.clickPopSetsButton){
+      this.page.clickPopSetsButton({index:index});
+    }else{
+      console.warn("page not has this function : ", this.page.clickPopSetsButton);
+    }
+  }
 
   __startMoveAnimation(res){
     console.warn(res);
