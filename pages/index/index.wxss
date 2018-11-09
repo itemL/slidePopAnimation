@@ -1,5 +1,7 @@
 /**index.wxss**/
 
+@import "../imagesFlyAniView.wxss";
+
 page{
   height: 100%;
 }
@@ -10,36 +12,6 @@ page{
   align-items: center;
 
   height: 100%;
-}
-
-.fly_container{
-  height: 100rpx;
-  width: 100rpx;
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.fly_container .round{
-    width: 100rpx;
-    height: 100rpx;
-    border-radius: 100%;
-    position: absolute;  
-    top:0rpx;
-    left:0rpx;
-
-    line-height: 100rpx;
-}
-
-.fly_container .image_container{
-  position: absolute;
-  top: 0rpx;
-  left: 0rpx;
-  height: 100rpx;
-  width: 100rpx;
 }
 
 .userinfo {

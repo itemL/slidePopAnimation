@@ -27,15 +27,15 @@ class imagesFlyAniView{
      imageList.push({ url: url,ani:""});
    }
    
-   this.page.setData({
-     'imageList': imageList
-   })
-   
    this.imageSize = imageSize && imageSize.width > 0 && imageSize.height > 0 ? imageSize : {width:100,height:100};
    this.moveLength = moveLength;
-   this.time = 0.5;
-   //direction ? "" : 
-    this.direction = movedirectionStyle.top;
+   this.time = time ? time : 1 ; 
+   this.direction = direction ? direction : movedirectionStyle.right;
+
+    this.page.setData({
+      'imageList': imageList,
+       imageSize:imageSize
+    })
  }
 
   __startMoveAnimation(res){
@@ -89,8 +89,9 @@ class imagesFlyAniView{
   }
 
   __getAnimationTranslateX(translateX){
+    var _this = this;
     var animation = wx.createAnimation({
-      duration: this.time * 1000,
+      duration: _this.time * 1000,
       timingFunction: "linear"
     })
     animation.translateX(translateX).step();
@@ -98,8 +99,9 @@ class imagesFlyAniView{
   }
 
   __getAnimationTranslateY(translateY) {
+    var _this = this;
     var animation = wx.createAnimation({
-      duration: this.time * 1000,
+      duration: _this.time * 1000,
       timingFunction: "linear"
     })
     animation.translateY(translateY).step();
