@@ -15,10 +15,16 @@ Page({
       url: '../logs/logs'
     })
   },
+
+  __clickPopSetsButton: function(event){
+    console.warn("event",event);
+  },
+
   onLoad: function () {
     
     var _this = this;
     _this.imagesFlyAniView = new ImagesFlyAniView(_this);
+
     var imageList = ["/images/image.png", "/images/image.png", "/images/image.png"];
 
     _this.imagesFlyAniView.load(imageList, { width: 100, height: 100 }, 200, 1);

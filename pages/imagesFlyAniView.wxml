@@ -3,7 +3,7 @@
   <view class='fly_container'>
       <view class='image_container'>
         <block wx:for="{{imageList}}" wx:key="*id">
-        <image src='{{item.url}}' class='round' animation="{{item.ani}}">
+        <image src='{{item.url}}' class='round' animation="{{item.ani}}" catchtap='__clickPopSetsButton' data-index='{{index}}' data-url="{{item.url}}">
         </image>
       </block>
       <view class='round' catchtap='__startMoveAnimation' style='background:red;'> start </view>
