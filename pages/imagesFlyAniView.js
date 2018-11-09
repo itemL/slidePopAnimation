@@ -12,10 +12,8 @@ class imagesFlyAniView{
     this.page.__startMoveAnimation = this.__startMoveAnimation.bind(this);
     this.page.__clickPopSetsButton = this.__clickPopSetsButton.bind(this);
   }
-/*
 
-*/ 
-  load(startImageUrl,images, imageSize, moveLength, time, direction){
+  load(startImageUrl,images, imageSize, imageSpace, time, direction){
    if (!images || images.length <= 0){
      return;
    }
@@ -26,7 +24,7 @@ class imagesFlyAniView{
    }
    
    this.imageSize = imageSize && imageSize.width > 0 && imageSize.height > 0 ? imageSize : {width:100,height:100};
-   this.moveLength = moveLength;
+   this.imageSpace = imageSpace;
    this.time = time ? time : 1 ; 
    this.direction = direction ? direction : movedirectionStyle.right;
 
@@ -47,7 +45,6 @@ class imagesFlyAniView{
   }
 
   __startMoveAnimation(res){
-    console.warn(res);
     var _this = this;
     var list = [];
 
@@ -55,15 +52,14 @@ class imagesFlyAniView{
       this.isAnimation = true;
       for (var i = 0; i < this.page.data.imageList.length; ++i) {
         var item = this.page.data.imageList[i];
-        var moveLength = 50 + 50 * i;
+        var moveLength = (this.imageSpace + this.imageSize.width) * (i + 1) / 2;
         item.ani = this.__getAnimation(moveLength);
-        list.push(item)
+        list.push(item);
       }
     }else{
       this.isAnimation = false;
       for (var i = 0; i < this.page.data.imageList.length; ++i) {
         var item = this.page.data.imageList[i];
-        var moveLength = 50 + 50 * i;
         item.ani = this.__getAnimation(0);
         list.push(item)
       }
