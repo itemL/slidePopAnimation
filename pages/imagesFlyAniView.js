@@ -8,8 +8,6 @@ export var movedirectionStyle = {
 class imagesFlyAniView{
   constructor(pageContext){
     this.page = pageContext;
-    this.page.data.imageList = [];
-    this.page.data.animations = [];
     this.isAnimation = false;
     this.page.__startMoveAnimation = this.__startMoveAnimation.bind(this);
     this.page.__clickPopSetsButton = this.__clickPopSetsButton.bind(this);
@@ -79,11 +77,6 @@ class imagesFlyAniView{
       var item = this.page.data.imageList[i];
       item.ani.export();
     }
-  
-  }
-
-  __animationend(event){
-    console.warn(event);
   }
 
   __getAnimation(length){
