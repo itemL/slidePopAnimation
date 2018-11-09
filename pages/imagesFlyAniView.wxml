@@ -1,0 +1,12 @@
+
+<template name="fly_images">
+  <view class='fly_container'>
+      <view class='image_container'>
+        <block wx:for="{{imageList}}" wx:key="*id">
+        <image src='{{item.url}}' class='round' animation="{{item.ani}}">
+        </image>
+      </block>
+      <view class='round' catchtap='__startMoveAnimation' style='background:red;'> start </view>
+      </view> 
+  </view>
+</template>

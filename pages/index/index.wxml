@@ -1,0 +1,12 @@
+<!--index.wxml-->
+
+<import src="../imagesFlyAniView.wxml" />
+
+<view class='container'>
+  <template is="fly_images" data="{{ imageList }}" /> 
+</view>
+
+
+
+
+
