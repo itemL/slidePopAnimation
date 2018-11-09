@@ -6,7 +6,7 @@
         <image src='{{item.url}}' class='round' animation="{{item.ani}}" catchtap='__clickPopSetsButton' data-index='{{index}}' data-url="{{item.url}}" style="width:'{{imageSize.width}}'rpx;height:'{{imageSize.height}}'rpx;">
         </image>
       </block>
-      <view class='round' catchtap='__startMoveAnimation' style='background:red;'> start </view>
+      <image class='round' catchtap='__startMoveAnimation' style='background:red;' src="startImageUrl"></image>
       </view> 
   </view>
 </template>

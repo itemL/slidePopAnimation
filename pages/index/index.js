@@ -27,7 +27,7 @@ Page({
 
     var imageList = ["/images/image.png", "/images/image.png", "/images/image.png"];
 
-    _this.imagesFlyAniView.load(imageList, { width: 50, height: 50 }, 200, 1);
+    _this.imagesFlyAniView.load("/images/image.png",imageList, { width: 50, height: 50 }, 200, 1);
 
     if (app.globalData.userInfo) {
       this.setData({
@@ -55,10 +55,6 @@ Page({
         }
       })
     }
-
-    // this.setData({
-    //   imageList: ["/images/image.png", "/images/image.png", "/images/image.png"]
-    // })
   },
   getUserInfo: function(e) {
     console.log(e)

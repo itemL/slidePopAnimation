@@ -17,7 +17,7 @@ class imagesFlyAniView{
 /*
 
 */ 
-  load(images, imageSize, moveLength, time, direction){
+  load(startImageUrl,images, imageSize, moveLength, time, direction){
    if (!images || images.length <= 0){
      return;
    }
@@ -34,7 +34,8 @@ class imagesFlyAniView{
 
     this.page.setData({
       'imageList': imageList,
-       imageSize:imageSize
+       imageSize:imageSize,
+       startImageUrl: startImageUrl
     })
  }
 
