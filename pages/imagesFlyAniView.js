@@ -12,7 +12,15 @@ class imagesFlyAniView{
     this.page.__startMoveAnimation = this.__startMoveAnimation.bind(this);
     this.page.__clickPopSetsButton = this.__clickPopSetsButton.bind(this);
   }
-  
+/*
+startImageUrl --- 第一个按钮的图标
+images        --- 需要弹出的按钮的图标数组
+imageSize     --- 图标大小
+imageSpace    --- 图标的间距
+time          --- 图标的动画运行时间
+direction     --- 图标的方向
+clickItemsBackBlock ---子图标的点击方法的回调:
+*/
   load(startImageUrl,images, imageSize, imageSpace, time, direction, clickItemsBackBlock){
    if (!images || images.length <= 0){
      return;
@@ -82,7 +90,7 @@ class imagesFlyAniView{
     } else if (this.direction == movedirectionStyle.left){
       return this.__getAnimationTranslateX(-length);
     } else if (this.direction == movedirectionStyle.bottom){
-      return this.__getAnimationTranslateY(-length);
+      return this.__getAnimationTranslateY(length);
     }else{
       return this.__getAnimationTranslateX(length);
     }
