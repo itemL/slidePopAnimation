@@ -61,7 +61,7 @@ clickItemsBackBlock ---子图标的点击方法的回调:
       this.isAnimation = true;
       for (var i = 0; i < this.page.data.imageList.length; ++i) {
         var item = this.page.data.imageList[i];
-        var moveLength = (this.imageSpace + this.imageSize.width) * (i + 1) / 2;
+        var moveLength = (this.imageSpace + this.imageSize.width * 2) * (i + 1) / 2;
         item.ani = this.__getAnimation(moveLength);
         list.push(item);
       }

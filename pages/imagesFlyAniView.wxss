@@ -1,8 +1,6 @@
 
 
 .fly_container{
-  height: 100rpx;
-  width: 100rpx;
   position: relative;
 
   display: flex;
@@ -12,8 +10,6 @@
 }
 
 .fly_container .round{
-    width: 100rpx;
-    height: 100rpx;
     border-radius: 100%;
     position: absolute;  
     top:0rpx;
@@ -26,6 +22,4 @@
   position: absolute;
   top: 0rpx;
   left: 0rpx;
-  height: 100rpx;
-  width: 100rpx;
 }

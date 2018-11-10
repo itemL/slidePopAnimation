@@ -1,12 +1,12 @@
 
 <template name="fly_images">
-  <view class='fly_container'>
-      <view class='image_container'>
+  <view class='fly_container' style="width:{{imageSize.width}}px;height:{{imageSize.height}}px;">
+      <view class='image_container' style="width:{{imageSize.width}}rpx;height:{{imageSize.height}}rpx;">
         <block wx:for="{{imageList}}" wx:key="*id">
-        <image src='{{item.url}}' class='round' animation="{{item.ani}}" catchtap='__clickPopSetsButton' data-index='{{index}}' data-url="{{item.url}}" style="width:{{imageSize.width}}rpx;height:{{imageSize.height}}rpx;">
+        <image src='{{item.url}}' class='round' animation="{{item.ani}}" catchtap='__clickPopSetsButton' data-index='{{index}}' data-url="{{item.url}}" style="width:{{imageSize.width}}px;height:{{imageSize.height}}px;">
         </image>
       </block>
-      <image class='round' catchtap='__startMoveAnimation' src="{{startImageUrl}}" style="width:{{imageSize.width}}rpx;height:{{imageSize.height}}rpx;"></image>
+      <image class='round' catchtap='__startMoveAnimation' src="{{startImageUrl}}" style="width:{{imageSize.width}}px;height:{{imageSize.height}}px;"></image>
       </view> 
   </view>
 </template>
