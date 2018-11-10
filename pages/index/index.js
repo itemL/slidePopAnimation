@@ -28,8 +28,10 @@ clickPopSetsButton
 
     var imageList = ["/images/image.png", "/images/image.png", "/images/image.png"];
 
-    _this.imagesFlyAniView.load("/images/image.png",imageList, { width: 80, height: 80 }, 10, 1);
-
+    _this.imagesFlyAniView.load("/images/image.png", imageList, { width: 80, height: 80 }, 10, 0.5, 2,function(index){
+      console.warn(index);
+    });
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

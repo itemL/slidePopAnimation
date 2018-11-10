@@ -12,8 +12,8 @@ class imagesFlyAniView{
     this.page.__startMoveAnimation = this.__startMoveAnimation.bind(this);
     this.page.__clickPopSetsButton = this.__clickPopSetsButton.bind(this);
   }
-
-  load(startImageUrl,images, imageSize, imageSpace, time, direction){
+  
+  load(startImageUrl,images, imageSize, imageSpace, time, direction, clickItemsBackBlock){
    if (!images || images.length <= 0){
      return;
    }
@@ -27,6 +27,7 @@ class imagesFlyAniView{
    this.imageSpace = imageSpace;
    this.time = time ? time : 1 ; 
    this.direction = direction ? direction : movedirectionStyle.right;
+   this.clickItemsBackBlock = clickItemsBackBlock;
 
     this.page.setData({
       'imageList': imageList,
@@ -37,8 +38,8 @@ class imagesFlyAniView{
 
   __clickPopSetsButton(event){
     var index=  event.currentTarget.dataset.index;
-    if (this.page.clickPopSetsButton){
-      this.page.clickPopSetsButton({index:index});
+    if (this.clickItemsBackBlock){
+      this.clickItemsBackBlock(index);
     }else{
       console.warn("page not has this function : ", this.page.clickPopSetsButton);
     }
@@ -79,7 +80,7 @@ class imagesFlyAniView{
     if (this.direction == movedirectionStyle.top) { 
       return this.__getAnimationTranslateY(-length);
     } else if (this.direction == movedirectionStyle.left){
-      return this.__getAnimationTranslateX(length);
+      return this.__getAnimationTranslateX(-length);
     } else if (this.direction == movedirectionStyle.bottom){
       return this.__getAnimationTranslateY(-length);
     }else{
