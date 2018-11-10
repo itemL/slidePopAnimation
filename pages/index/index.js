@@ -8,14 +8,14 @@ Page({
   },
 
   onLoad: function () {
-    
     var _this = this;
     _this.imagesFlyAniView = new ImagesFlyAniView(_this);
 
-    var imageList = ["/images/image.png", "/images/image.png", "/images/image.png"];
+    var imageList = [ "/images/changeColor.png", "/images/image.png", "/images/poem.png"];
 
-    _this.imagesFlyAniView.load("/images/image.png", imageList, { width: 30, height: 30 }, 10, 0.5, 3,function(index){
+    _this.imagesFlyAniView.load("/images/add.png", imageList, { width: 50, height: 50 }, 10, 0.2, 3,function(index){
       console.warn(index);
     });
   }
+  
 })

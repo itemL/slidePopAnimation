@@ -11,6 +11,7 @@ class imagesFlyAniView{
     this.isAnimation = false;
     this.page.__startMoveAnimation = this.__startMoveAnimation.bind(this);
     this.page.__clickPopSetsButton = this.__clickPopSetsButton.bind(this);
+    this.page.animationend = this.__animationend.bind(this);
   }
 /*
 startImageUrl --- 第一个按钮的图标
@@ -44,6 +45,28 @@ clickItemsBackBlock ---子图标的点击方法的回调:
     })
  }
 
+  __animationend(event){
+    var _this = this;
+    var index = event.currentTarget.dataset.index;
+
+    if (_this.isAnimation){
+        //开始
+        if(index == 0){
+          //动画完成
+
+        }
+    }else{
+      
+      if (index === this.page.data.imageList.length - 1){
+        this.page.setData({
+          animationStatus: false//已经开始动画,隐藏image
+        });
+      }
+    }
+
+    console.warn("event",event);
+  }
+
   __clickPopSetsButton(event){
     var index=  event.currentTarget.dataset.index;
     if (this.clickItemsBackBlock){
@@ -65,6 +88,11 @@ clickItemsBackBlock ---子图标的点击方法的回调:
         item.ani = this.__getAnimation(moveLength);
         list.push(item);
       }
+      
+      this.page.setData({
+        animationStatus:true//已经开始动画,显示隐藏的image
+      });
+
     }else{
       this.isAnimation = false;
       for (var i = 0; i < this.page.data.imageList.length; ++i) {

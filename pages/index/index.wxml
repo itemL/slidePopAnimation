@@ -4,6 +4,6 @@
 
 <view class='container'>
   <import src="../imagesFlyAniView.wxml" />
-  <template is="fly_images" data="{{ imageList , imageSize,startImageUrl}}" /> 
+  <template is="fly_images" data="{{ imageList , imageSize,startImageUrl,animationStatus}}" /> 
 </view>
 
